@@ -46,12 +46,35 @@ h3 {
     margin: 10px 0;
 }
 
+h1,
+h2,
+h3 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.33);
+}
+
 img[src='./img/crowd.webp'] {
     border-radius: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
+}
+
+a {
+    font-family: Monospace;
+    font-size: 1.6rem;
+    color: rgb(5, 133, 165);
+    font-weight: 600;
+    background-color: #c4e1ec;
+    margin-left: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
+a:hover {
+    color: rgb(255, 255, 255)
 }
 
 #app {

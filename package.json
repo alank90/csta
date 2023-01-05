@@ -15,6 +15,7 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.6.0"
+    "eslint-config-prettier": "^8.6.0",
+    "stein-js-client": "^0.0.2"
   }
 }
