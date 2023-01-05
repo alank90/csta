@@ -1,0 +1,361 @@
+/* Browser Reset.
+
+   http://meyerweb.com/eric/tools/css/reset/ 
+
+   v2.0 | 20110126
+
+   License: none (public domain)
+
+Remenmber to include following <meta> tag on all web pages:
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+Each row should be wrapped in a <div>. The number of columns inside a row should always add up to 12.
+
+HTML:
+
+<div class="row">
+
+  <div class="col-3">...</div>
+
+  <div class="col-9">...</div>
+
+</div>
+
+
+
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    font-size: 100%;
+
+    font: inherit;
+
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+
+    border-spacing: 0;
+}
+
+/* ==================================================================
+
+======= Styling for Background Image on the Web Page. Remember ======
+
+======= change background picture for your web page. ================
+
+=====================================================================
+
+=================================================================== */
+
+/* ===== Change Background Image for smaller devices =================*/
+
+html {
+    background: url('../img/small_big_country.webp') no-repeat center center
+        fixed;
+
+    -webkit-background-size: cover;
+
+    -moz-background-size: cover;
+
+    -o-background-size: cover;
+
+    background-size: cover;
+}
+
+/* For devices 400px and larger: */
+
+@media only screen and (min-device-width: 400px) {
+    html {
+        background: url('../img/big_country.webp') no-repeat center center fixed;
+
+        -webkit-background-size: cover;
+
+        -moz-background-size: cover;
+
+        -o-background-size: cover;
+
+        background-size: cover;
+    }
+}
+
+/* End Responsive Background Image Stylings */
+
+/*=======================================
+
+====== Responsive Web Design Stylings ===
+
+========================================*/
+
+* {
+    box-sizing: border-box;
+}
+
+/* For mobile phones: */
+
+[class*='col-'] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+
+    .col-m-1 {
+        width: 8.33%;
+    }
+
+    .col-m-2 {
+        width: 16.66%;
+    }
+
+    .col-m-3 {
+        width: 25%;
+    }
+
+    .col-m-4 {
+        width: 33.33%;
+    }
+
+    .col-m-5 {
+        width: 41.66%;
+    }
+
+    .col-m-6 {
+        width: 50%;
+    }
+
+    .col-m-7 {
+        width: 58.33%;
+    }
+
+    .col-m-8 {
+        width: 66.66%;
+    }
+
+    .col-m-9 {
+        width: 75%;
+    }
+
+    .col-m-10 {
+        width: 83.33%;
+    }
+
+    .col-m-11 {
+        width: 91.66%;
+    }
+
+    .col-m-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
+
+[class*='col-'] {
+    float: left;
+
+    padding: 15px;
+}
+
+.row::after {
+    content: '';
+
+    clear: both;
+
+    display: block;
+}
+
+/*Styling for Images on Page. If the width property is set to 100%, the image will be responsive and scale up and down. If set to max-width:100% the image will only scale down if necessary.*/
+
+img {
+    width: 100%;
+
+    height: auto;
+}
+
+/* ================================
+
+===== End of Responsive Stylings ==
+
+=================================*/
