@@ -1,0 +1,19 @@
+{
+  "name": "csta",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "prettier": "2.8.1",
+    "vite": "^4.0.4"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^8.6.0"
+  }
+}
