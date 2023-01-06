@@ -15,13 +15,48 @@
     -webkit-text-size-adjust: 100%;
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #03528389;
+    justify-content: end;
+    margin: 5px 5px;
+    padding: 8px;
 }
+
+.nav-container > li {
+    font-family: Monospace;
+    font-size: 1.6rem;
+    color: #000;
+    font-weight: 600;
+    margin-left: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+a {
+    color: #000;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 a:hover {
-    color: #535bf2;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.nav-container > li > a:hover,
+.nav-container > li:hover {
+    color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -61,27 +96,16 @@ img[src='./img/crowd.webp'] {
     width: 30%;
 }
 
-a {
-    font-family: Monospace;
-    font-size: 1.6rem;
-    color: rgb(5, 133, 165);
-    font-weight: 600;
-    background-color: #c4e1ec;
-    margin-left: 15px;
-    border-radius: 5px;
-    padding: 5px;
-    
-}
-
-a:hover {
-    color: rgb(255, 255, 255)
-}
-
 #app {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+}
+
+.visible {
+    opacity: 0;
+    height: 0;
 }
 
 .logo {
@@ -122,6 +146,133 @@ button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* ====== Signup Form Stylings ================ */
+
+CSS Pretty Print * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.user {
+    width: 90%;
+    opacity: 0;
+    max-width: 340px;
+    margin: 15px auto;
+    transition: all 0.3s ease-in;
+}
+
+.form--appear {
+    opacity: 1;
+}
+.user__header {
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 500ms ease-in-out 0.7s forwards;
+}
+.user__title {
+    font-size: 1.4rem;
+    margin-bottom: -10px;
+    font-weight: 500;
+    color: white;
+}
+.form {
+    margin-top: 60px;
+    border-radius: 6px;
+    width: 400px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+.form--no {
+    animation: NO 1s ease-in-out;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    transition: 0.3s;
+}
+.form__input:focus {
+    background: #f7f7f7;
+}
+
+img[src='./img/signup_img.webp'] {
+    max-width: 125px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Roboto';
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    color: white;
+    background: #aba194;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #a09486;
+}
+@keyframes NO {
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes arrive {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* ====== End Form Stylings =================== */
 
 @media (prefers-color-scheme: light) {
     :root {
