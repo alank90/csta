@@ -17,12 +17,17 @@
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
   <nav>
     <ul class="nav-container">
       <li id="signup">Signup</li>
+      <li class="attendees">Attendees</li>
       <li><a href="https://docs.google.com/spreadsheets/d/1sUpm7CN_e-YRT-mMJvT3IE8DT0D3Ww10FFn_3mlPC0I/edit#gid=0"
           target="_blank">Google Sheets
         </a></li>
@@ -66,8 +71,15 @@
 
   <!-- ========== End Signup Form Markup ====================== -->
 
+  <!-- Template for table -->
 
-  <!-- <div id="app"></div> -->
+
+  <div id="target"></div>
+
+  <script id="template" type="text/x-handlebars-template">
+    <p>Use the <strong>{{power}}</strong>, {{name}}!</p>
+  </script>
+
   <script type="module" src="/main.js"></script>
 </body>
 

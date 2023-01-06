@@ -96,6 +96,11 @@ img[src='./img/crowd.webp'] {
     width: 30%;
 }
 
+p {
+    color: red;
+    font-size: 3rem;
+}
+
 #app {
     max-width: 1280px;
     margin: 0 auto;
