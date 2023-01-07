@@ -279,6 +279,39 @@ img[src='./img/signup_img.webp'] {
 
 /* ====== End Form Stylings =================== */
 
+/* ======= Table Stylings ===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table,
+th,
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+thead {
+    background-color: #1c87c9;
+    color: #ffffff;
+}
+th {
+    text-align: center;
+    height: 40px;
+    vertical-align: middle;
+    font-weight: 550;
+}
+tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+tbody tr:nth-child(even) {
+    background: #cde1f3;
+}
+
+td {
+    padding: 5px;
+}
+/* ============ End Table Stylings ========== */
+
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;

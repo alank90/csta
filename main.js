@@ -39,7 +39,7 @@ button.addEventListener('click', function () {
 });
 
 // Event listener to retrieve attendees & create template for
-// attendee table
+// attendee table using Handlebars.js
 attendees.addEventListener('click', () => {
     store.read('signup').then((data) => {
         console.log(data);
