@@ -304,7 +304,15 @@ tbody tr:nth-child(odd) {
     background: #ffffff;
 }
 tbody tr:nth-child(even) {
-    background: #cde1f3;
+    background: #a7c5e0;
+}
+
+tbody tr:hover:nth-child(odd) {
+    background: #79bde8;
+}
+
+tbody tr:hover:nth-child(even) {
+    background: #e7eff4;
 }
 
 td {

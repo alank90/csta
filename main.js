@@ -41,8 +41,10 @@ button.addEventListener('click', function () {
 // Event listener to retrieve attendees & create template for
 // attendee table using Handlebars.js
 attendees.addEventListener('click', () => {
+    let attendeesArray = [];
     store.read('signup').then((data) => {
-        console.log(data);
+        attendeesArray = data;
+        console.log(attendeesArray);
     });
 
     // Handlebars template code
@@ -52,7 +54,12 @@ attendees.addEventListener('click', () => {
     let compiled_template = Handlebars.compile(template);
 
     //Render the data into the template
-    let rendered = compiled_template({ name: 'Luke', power: 'force' });
+    let rendered = compiled_template({
+        student_name: "Vahid's Blog",
+        teacher_name: 'Technical blog',
+        email: 'akil@aol.com',
+        group: 'Comp IV',
+    });
 
     //Overwrite the contents of #target with the renderer HTML
     document.getElementById('target').innerHTML = rendered;
