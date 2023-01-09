@@ -112,6 +112,11 @@ p {
     text-align: center;
 }
 
+#target {
+    max-width: 65%;
+    margin: 0 auto;
+}
+
 .visible {
     opacity: 0;
     height: 0;
