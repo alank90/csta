@@ -12,6 +12,7 @@ const button = document.querySelector('.btn');
 const form = document.querySelector('form');
 const crowdImg = document.querySelector("img[src='./img/crowd.webp']");
 const attendees = document.querySelector('.attendees');
+const tableTemplate = document.getElementById('target');
 
 // ========= Event listener's =============== //
 
@@ -21,9 +22,9 @@ signUp.addEventListener('click', () => {
     crowdImg.classList.toggle('visible');
 });
 
-// Event listener to submit form data to Google sheets
+// ===== Event listener to submit form data to Google sheets ======== //
 button.addEventListener('click', function () {
-    // lets
+    // lets grab data from form
     let formData = new FormData(form);
     let arrayFormData = [];
 
@@ -32,39 +33,67 @@ button.addEventListener('click', function () {
     formData = Object.fromEntries(formData.entries());
     arrayFormData.push(formData);
 
-    store.append('signup', arrayFormData).then((res) => {
-        console.log(res);
-        form.reset();
-    });
+    // Let's hit the stein API with the form data
+    try {
+        store.append('signup', arrayFormData).then((res) => {
+            console.log(res);
+            form.reset();
+            button.innerHTML = `Sign-up succesful. ${res.updatedRange}`;
+        });
+    } catch (error) {
+        console.error(error);
+        alert('Add attendee failed! Sorry try again.');
+    }
 });
 
-// Event listener to retrieve attendees & create template for
-// attendee table using Handlebars.js
+// ===== End Event listener to submit form data =================== //
+
+// ===== Event listener to retrieve attendees & create   ==== //
+// ===== template forattendee table using Handlebars.js  ==== //
 attendees.addEventListener('click', () => {
     let attendeesArray = [];
-    store.read('signup').then((data) => {
-        attendeesArray = data;
-        console.log(attendeesArray);
-    });
+    if (tableTemplate.classList.contains('visible')) {
+        tableTemplate.classList.remove('visible');
+    }
 
-    // Handlebars template code
-    let template = document.getElementById('template').innerHTML;
+    try {
+        store.read('signup').then((data) => {
+            attendeesArray = data;
 
-    //Compile the template
-    let compiled_template = Handlebars.compile(template);
+            // ===== Handlebars template code ============ //
+            let template = document.getElementById('template').innerHTML;
 
-    //Render the data into the template
-    let rendered = compiled_template({
-        student_name: "Vahid's Blog",
-        teacher_name: 'Technical blog',
-        email: 'akil@aol.com',
-        group: 'Comp IV',
-    });
+            //Compile the template
+            let compiled_template = Handlebars.compile(template);
 
-    //Overwrite the contents of #target with the renderer HTML
-    document.getElementById('target').innerHTML = rendered;
+            //Render the data into the template
+            let rendered = compiled_template({ attendeesArray });
 
-    user.classList.toggle('visible');
+            //Overwrite the contents of #target with the renderer HTML
+            document.getElementById('target').innerHTML = rendered;
+
+            // toggle the form block so table is able to take its place in
+            // document body.
+            user.classList.toggle('visible');
+        });
+    } catch (error) {
+        console.log.error(error);
+    }
 
     //  ============= End Template code =============== //
+});
+
+// ============== Close Dialog Box Event Listener == //
+form.addEventListener('click', (e) => {
+    const el = e.target;
+    if (el.classList.contains('close')) {
+        user.classList.toggle('form--appear');
+    }
+});
+
+tableTemplate.addEventListener('click', (e) => {
+    const el = e.target;
+    if (el.classList.contains('close')) {
+        tableTemplate.classList.toggle('visible');
+    }
 });

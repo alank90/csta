@@ -49,6 +49,8 @@
     </header>
 
     <form class="form">
+      <img class="close" src="./img/close.png" alt="Close Button">
+
       <div class="form__group">
         <input type="text" name="student_name" placeholder="Name" class="form__input" />
       </div>
@@ -65,18 +67,22 @@
         <input type="text" name="group" placeholder="Group" class="form__input" />
       </div>
 
-      <button class="btn" type="button">Register</button>
+      <button class="btn message" type="button">Register</button>
     </form>
   </div>
 
   <!-- ========== End Signup Form Markup ====================== -->
 
-  <!-- Target element for Handlebars template -->
+  <!-- ===== Target element for Handlebars template ====== -->
   <div id="target"></div>
 
-  <!-- ==== Handlebars Template =============== -->
+  <!-- =========================================== -->
+  <!-- ======= Handlebars Template =============== -->
+  <!-- =========================================== -->
+
   <script id="template" type="text/x-handlebars-template">
     <table>
+      <img class="close" src="./img/close.png" alt="Close Button">
       <thead>
       <tr>
         <th>Student Name</th>
@@ -87,16 +93,18 @@
       </thead>
 
       <tbody>
+        {{#each attendeesArray}}
       <tr>
-       <td>{{this.student_name}}</td>
-       <td>{{this.teacher_name}}</td>
-       <td>{{this.email}}</td>
-       <td>{{this.group}}</td>
+       <td>{{student_name}}</td>
+       <td>{{teacher_name}}</td>
+       <td>{{email}}</td>
+       <td>{{group}}</td>
       </tr>
+      {{/each}}
      
       </tbody>
     </table>
-      </script>
+  </script>
   <!-- ==== End of Handlebars Template ======= -->
 
   <script type="module" src="/main.js"></script>
