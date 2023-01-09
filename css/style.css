@@ -88,7 +88,7 @@ h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.33);
 }
 
-img[src='./img/crowd.webp'] {
+img[src='./crowd.webp'] {
     border-radius: 50%;
     display: block;
     margin-left: auto;
@@ -96,7 +96,7 @@ img[src='./img/crowd.webp'] {
     width: 30%;
 }
 
-img[src='./img/signup_img.webp'] {
+img[src='./signup_img.webp'] {
     max-width: 125px;
 }
 
