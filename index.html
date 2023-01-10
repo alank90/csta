@@ -33,12 +33,23 @@
         </a></li>
     </ul>
   </nav>
-  <h1>CSTA - Lower Hudson Chapter</h1>
+
+  <h1><img src="./csta_logo.webp" alt="CSTA Logo"> - Lower Hudson Chapter</h1>
   <h2>HS Programming Contest 2023</h2>
 
-  <h3>Date: Thurs Feb. 9th</h3>
-  <h3>Place: Ardsley HS</h3>
-  <h3>Time: 3:30 - 7:30 PM</h3>
+  <div class="event-description">
+    <div class="centered-element">
+      <h3>Date: Thurs Feb. 9th</h3>
+      <h3>Place: Ardsley HS</h3>
+      <h3>Time: 3:30 - 7:30 PM</h3>
+      <p>The CSTA Lower Hudson Chapter is hosting a high school programming contest. Teams of
+        3-4
+        students will have a
+        chance to put their coding skills to the test against other students in the area in a fun filled
+        afternoon/evening.
+      </p>
+    </div>
+  </div>
   <img src="./crowd.webp" alt="Crowd Shot">
 
   <!-- ============= Signup Form Markup ============== -->
@@ -56,15 +67,27 @@
       </div>
 
       <div class="form__group">
-        <input type="text" name="teacher_name" placeholder="Teacher Name" class="form__input" />
-      </div>
-
-      <div class="form__group">
         <input type="email" name="email" placeholder="Email" class="form__input" />
       </div>
 
       <div class="form__group">
+        <input type="number" name="grade" placeholder="Grade" min="9" max="12" class="form__input" />
+      </div>
+
+      <div class="form__group">
         <input type="text" name="group" placeholder="Group" class="form__input" />
+      </div>
+
+      <div class="form__group">
+        <input type="text" name="team_name" placeholder="Team Name" class="form__input" />
+      </div>
+
+      <div class="form__group">
+        <input type="text" name="school" placeholder="School" class="form__input" />
+      </div>
+
+      <div class="form__group">
+        <input type="text" name="teacher_advisor" placeholder="Teacher\Advisor" class="form__input" />
       </div>
 
       <button class="btn message" type="button">Register</button>
@@ -81,14 +104,17 @@
   <!-- =========================================== -->
 
   <script id="template" type="text/x-handlebars-template">
-    <table>
+    <table class="sortable">
       <img class="close" src="./img/close.png" alt="Close Button">
       <thead>
       <tr>
         <th>Student Name</th>
-        <th>Teacher Name</th>
-        <th>Email Address</th>
+        <th>Email</th>
+        <th>Grade</th>
         <th>Group</th>
+        <th>Team Name</th>
+        <th>School</th>
+        <th>Teacher\Advisor</th>
       </tr>
       </thead>
 
@@ -96,9 +122,12 @@
         {{#each attendeesArray}}
       <tr>
        <td>{{student_name}}</td>
-       <td>{{teacher_name}}</td>
        <td>{{email}}</td>
+       <td>{{grade}}</td>
        <td>{{group}}</td>
+       <td>{{team_name}}</td>
+       <td>{{school}}</td>
+       <td>{{teacher_advisor}}</td>    
       </tr>
       {{/each}}
      
@@ -107,7 +136,10 @@
   </script>
   <!-- ==== End of Handlebars Template ======= -->
 
+  <!-- ============ Javascript Files ===================== -->
   <script type="module" src="/main.js"></script>
+
+  
 </body>
 
 </html>

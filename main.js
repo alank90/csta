@@ -1,5 +1,6 @@
 import './css/style.css';
 import SteinStore from 'stein-js-client';
+import sortTable from './modules/sortTables';
 
 // Create Stein Store instance
 const VITE_STEIN_URL = import.meta.env.VITE_STEIN_URL;
@@ -9,7 +10,7 @@ const signUp = document.getElementById('signup');
 const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
 const form = document.querySelector('form');
-const crowdImg = document.querySelector("img[src='./img/crowd.webp']");
+const crowdImg = document.querySelector("img[src='./public/crowd.webp']");
 const attendees = document.querySelector('.attendees');
 const tableTemplate = document.getElementById('target');
 
@@ -56,25 +57,30 @@ attendees.addEventListener('click', () => {
     }
 
     try {
-        store.read('signup').then((data) => {
-            attendeesArray = data;
+        store
+            .read('signup')
+            .then((data) => {
+                attendeesArray = data;
 
-            // ===== Handlebars template code ============ //
-            let template = document.getElementById('template').innerHTML;
+                // ===== Handlebars template code ============ //
+                let template = document.getElementById('template').innerHTML;
 
-            //Compile the template
-            let compiled_template = Handlebars.compile(template);
+                //Compile the template
+                let compiled_template = Handlebars.compile(template);
 
-            //Render the data into the template
-            let rendered = compiled_template({ attendeesArray });
+                //Render the data into the template
+                let rendered = compiled_template({ attendeesArray });
 
-            //Overwrite the contents of #target with the renderer HTML
-            document.getElementById('target').innerHTML = rendered;
+                //Overwrite the contents of #target with the renderer HTML
+                document.getElementById('target').innerHTML = rendered;
 
-            // toggle the form block so table is able to take its place in
-            // document body.
-            user.classList.toggle('visible');
-        });
+                // toggle the form block so table is able to take its place in
+                // document body.
+                user.classList.toggle('visible');
+            })
+            .then(() => {
+                sortTable();
+            });
     } catch (error) {
         console.log.error(error);
     }

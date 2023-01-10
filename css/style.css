@@ -96,13 +96,35 @@ img[src='./crowd.webp'] {
     width: 30%;
 }
 
+img[src='./csta_logo.webp'] {
+    max-width: 325px;
+    border-radius: 4px;
+    border: #000 solid 2px;
+}
+
 img[src='./signup_img.webp'] {
     max-width: 125px;
 }
 
-p {
-    color: red;
-    font-size: 3rem;
+.event-description {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 10px auto;
+    text-align: center;
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 550;
+    background: rgba(95, 172, 223, 0.465);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.centered-element {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #app {
@@ -113,7 +135,7 @@ p {
 }
 
 #target {
-    max-width: 65%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
@@ -212,6 +234,7 @@ CSS Pretty Print * {
 
 .btn {
     display: block;
+    font-size: 1.4rem;
     width: 100%;
     padding: 20px;
     font-family: 'Roboto';
