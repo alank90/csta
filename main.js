@@ -10,7 +10,7 @@ const signUp = document.getElementById('signup');
 const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
 const form = document.querySelector('form');
-const crowdImg = document.querySelector("img[src='./public/crowd.webp']");
+const crowdImg = document.querySelector("img[src='./crowd.webp']");
 const attendees = document.querySelector('.attendees');
 const tableTemplate = document.getElementById('target');
 
@@ -29,12 +29,50 @@ button.addEventListener('click', function () {
     let arrayFormData = [];
 
     form.classList.add('form--no');
+
     // Need to convert FormData object to array object for stein to accept.
     formData = Object.fromEntries(formData.entries());
     arrayFormData.push(formData);
 
+    // Build an array of objects to send to stein as group
+    let teamMember = {};
+    let teamMembers = [];
+
+    for (let i = 1; i < 5; i++) {
+        teamMember['group'] = formData['group'];
+        teamMember['team_name'] = formData['team_name'];
+        teamMember['school'] = formData['school'];
+        teamMember['teacher_advisor'] = formData['teacher_advisor'];
+        teamMember['student_name'] = formData['student_name' + i];
+        teamMember['email'] = formData['email' + i];
+        teamMember['grade'] = formData['grade' + i];
+        console.log(teamMember);
+
+        // Push students in group onto an array
+        teamMembers = [...teamMembers, teamMember];
+
+        // clear the teammember object to be reused
+        teamMember = {};
+    }
+
+    let arrayData = [];
+    teamMembers.forEach((student) => {
+        arrayData.push(student);
+        console.log(arrayData);
+        try {
+            store.append('signup', arrayData).then((res) => {
+                arrayData.pop();
+                //form.reset();
+                button.innerHTML = `Sign-up succesful. ${res.updatedRange}`;
+            });
+        } catch (error) {
+            console.error(error);
+            alert('Add attendee failed! Sorry try again.');
+        }
+    });
+
     // Let's hit the stein API with the form data
-    try {
+    /*  try {
         store.append('signup', arrayFormData).then((res) => {
             console.log(res);
             form.reset();
@@ -43,7 +81,7 @@ button.addEventListener('click', function () {
     } catch (error) {
         console.error(error);
         alert('Add attendee failed! Sorry try again.');
-    }
+    } */
 });
 
 // ===== End Event listener to submit form data =================== //
@@ -80,6 +118,8 @@ attendees.addEventListener('click', () => {
             })
             .then(() => {
                 sortTable();
+                crowdImg.classList.toggle('visible');
+                tableTemplate.scrollIntoView({ behavior: 'smooth' });
             });
     } catch (error) {
         console.log.error(error);
