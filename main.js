@@ -10,7 +10,7 @@ const signUp = document.getElementById('signup');
 const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
 const form = document.querySelector('form');
-const crowdImg = document.querySelector("img[src='./public/crowd.webp']");
+const crowdImg = document.querySelector("img[alt='Crowd Shot'");
 const attendees = document.querySelector('.attendees');
 const tableTemplate = document.getElementById('target');
 
