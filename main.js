@@ -1,4 +1,3 @@
-import './css/style.css';
 import SteinStore from 'stein-js-client';
 import sortTable from './modules/sortTables';
 
@@ -10,7 +9,11 @@ const signUp = document.getElementById('signup');
 const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
 const form = document.querySelector('form');
+<<<<<<< HEAD
 const crowdImg = document.querySelector("img[src='./crowd.webp']");
+=======
+const crowdImg = document.querySelector("img[alt='Crowd Shot'");
+>>>>>>> main
 const attendees = document.querySelector('.attendees');
 const tableTemplate = document.getElementById('target');
 
