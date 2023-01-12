@@ -9,11 +9,7 @@ const signUp = document.getElementById('signup');
 const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
 const form = document.querySelector('form');
-<<<<<<< HEAD
-const crowdImg = document.querySelector("img[src='./crowd.webp']");
-=======
-const crowdImg = document.querySelector("img[alt='Crowd Shot'");
->>>>>>> main
+const crowdImg = document.querySelector("img[alt='Crowd Shot']");
 const attendees = document.querySelector('.attendees');
 const tableTemplate = document.getElementById('target');
 
@@ -41,42 +37,29 @@ button.addEventListener('click', function () {
     let teamMember = {};
     let teamMembers = [];
 
+    // Iterate thru the array and check if any group member
+    // names are null so we dont send them to Google sheets
     for (let i = 1; i < 5; i++) {
-        teamMember['group'] = formData['group'];
-        teamMember['team_name'] = formData['team_name'];
-        teamMember['school'] = formData['school'];
-        teamMember['teacher_advisor'] = formData['teacher_advisor'];
-        teamMember['student_name'] = formData['student_name' + i];
-        teamMember['email'] = formData['email' + i];
-        teamMember['grade'] = formData['grade' + i];
-        console.log(teamMember);
+        if (formData['student_name' + i]) {
+            teamMember['group'] = formData['group'];
+            teamMember['team_name'] = formData['team_name'];
+            teamMember['school'] = formData['school'];
+            teamMember['teacher_advisor'] = formData['teacher_advisor'];
+            teamMember['student_name'] = formData['student_name' + i];
+            teamMember['email'] = formData['email' + i];
+            teamMember['grade'] = formData['grade' + i];
 
-        // Push students in group onto an array
-        teamMembers = [...teamMembers, teamMember];
+            // Push students in group onto an array
+            teamMembers = [...teamMembers, teamMember];
 
-        // clear the teammember object to be reused
-        teamMember = {};
+            // clear the teammember object to be reused
+            teamMember = {};
+        }
     }
 
-    let arrayData = [];
-    teamMembers.forEach((student) => {
-        arrayData.push(student);
-        console.log(arrayData);
-        try {
-            store.append('signup', arrayData).then((res) => {
-                arrayData.pop();
-                //form.reset();
-                button.innerHTML = `Sign-up succesful. ${res.updatedRange}`;
-            });
-        } catch (error) {
-            console.error(error);
-            alert('Add attendee failed! Sorry try again.');
-        }
-    });
-
-    // Let's hit the stein API with the form data
-    /*  try {
-        store.append('signup', arrayFormData).then((res) => {
+    // Let's hit the stein API with the form data in array form
+    try {
+        store.append('signup', teamMembers).then((res) => {
             console.log(res);
             form.reset();
             button.innerHTML = `Sign-up succesful. ${res.updatedRange}`;
@@ -84,7 +67,7 @@ button.addEventListener('click', function () {
     } catch (error) {
         console.error(error);
         alert('Add attendee failed! Sorry try again.');
-    } */
+    }
 });
 
 // ===== End Event listener to submit form data =================== //
