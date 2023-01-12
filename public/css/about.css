@@ -102,7 +102,7 @@ h3 {
 /* ===== Change Background Image for smaller devices =================*/
 
 html {
-    background: url('/img/cs_backgroundII.webp') no-repeat center center fixed;
+    background: url('/cs_backgroundII.webp') no-repeat center center fixed;
 
     -webkit-background-size: cover;
 
@@ -117,7 +117,7 @@ html {
 
 @media only screen and (min-device-width: 400px) {
     html {
-        background: url('../img/cs_backgroundII.webp') no-repeat center center
+        background: url('/cs_backgroundII.webp') no-repeat center center
             fixed;
 
         -webkit-background-size: cover;
