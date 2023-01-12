@@ -1,4 +1,4 @@
-root {
+:root {
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -33,6 +33,7 @@ root {
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    list-style-type: none;
 }
 a {
     color: #000;
@@ -86,4 +87,45 @@ h2,
 h3 {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.33);
+}
+
+/* ==================================================================
+
+======= Styling for Background Image on the Web Page. Remember ======
+
+======= change background picture for your web page. ================
+
+=====================================================================
+
+=================================================================== */
+
+/* ===== Change Background Image for smaller devices =================*/
+
+html {
+    background: url('/img/cs_backgroundII.webp') no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+
+    -moz-background-size: cover;
+
+    -o-background-size: cover;
+
+    background-size: cover;
+}
+
+/* For devices 400px and larger: */
+
+@media only screen and (min-device-width: 400px) {
+    html {
+        background: url('../img/cs_backgroundII.webp') no-repeat center center
+            fixed;
+
+        -webkit-background-size: cover;
+
+        -moz-background-size: cover;
+
+        -o-background-size: cover;
+
+        background-size: cover;
+    }
 }

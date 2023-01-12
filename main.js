@@ -1,4 +1,3 @@
-import './css/style.css';
 import SteinStore from 'stein-js-client';
 import sortTable from './modules/sortTables';
 

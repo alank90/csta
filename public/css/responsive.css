@@ -182,7 +182,7 @@ table {
 /* ===== Change Background Image for smaller devices =================*/
 
 html {
-    background: url('../img/cs_backgroundII.webp') no-repeat center center
+    background: url('/img/cs_backgroundII.webp') no-repeat center center
         fixed;
 
     -webkit-background-size: cover;
