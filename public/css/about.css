@@ -89,6 +89,34 @@ h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.33);
 }
 
+.container {
+    /* This forces footer to bottom of page */
+    min-height: calc(100vh - 75px);
+}
+
+img[alt='Laptop Open'] {
+    border-radius: 50%;
+    width: 20%;
+    margin: 0 auto;
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+}
+
+footer > a {
+    color: rgb(142, 208, 241);
+    font-size: 1.5rem;
+}
+
 /* ==================================================================
 
 ======= Styling for Background Image on the Web Page. Remember ======
@@ -117,8 +145,7 @@ html {
 
 @media only screen and (min-device-width: 400px) {
     html {
-        background: url('/cs_backgroundII.webp') no-repeat center center
-            fixed;
+        background: url('/cs_backgroundII.webp') no-repeat center center fixed;
 
         -webkit-background-size: cover;
 

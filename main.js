@@ -5,6 +5,7 @@ import sortTable from './modules/sortTables';
 const VITE_STEIN_URL = import.meta.env.VITE_STEIN_URL;
 const store = new SteinStore(VITE_STEIN_URL);
 
+// Variable Declarations
 const signUp = document.getElementById('signup');
 const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
@@ -13,7 +14,9 @@ const crowdImg = document.querySelector("img[alt='Crowd Shot']");
 const attendees = document.querySelector('.attendees');
 const tableTemplate = document.getElementById('target');
 
-// ========= Event listener's =============== //
+// ========================================================== //
+// =============== Event listener's ========================= //
+// ========================================================== //
 
 // Sign-up button listener
 signUp.addEventListener('click', () => {
@@ -21,7 +24,10 @@ signUp.addEventListener('click', () => {
     crowdImg.classList.toggle('visible');
 });
 
+// ================================================================== //
 // ===== Event listener to submit form data to Google sheets ======== //
+// ================================================================== //
+
 button.addEventListener('click', function () {
     // lets grab data from form
     let formData = new FormData(form);
@@ -41,12 +47,12 @@ button.addEventListener('click', function () {
     // names are null so we dont send them to Google sheets
     for (let i = 1; i < 5; i++) {
         if (formData['student_name' + i]) {
-            teamMember['group'] = formData['group'];
             teamMember['team_name'] = formData['team_name'];
             teamMember['school'] = formData['school'];
             teamMember['teacher_advisor'] = formData['teacher_advisor'];
             teamMember['student_name'] = formData['student_name' + i];
             teamMember['email'] = formData['email' + i];
+            teamMember['shirt_size'] = formData['shirt_size' + i];
             teamMember['grade'] = formData['grade' + i];
 
             // Push students in group onto an array
@@ -72,8 +78,13 @@ button.addEventListener('click', function () {
 
 // ===== End Event listener to submit form data =================== //
 
+// ---------------------------------------------------------------------- //
+
+// ========================================================== //
 // ===== Event listener to retrieve attendees & create   ==== //
 // ===== template forattendee table using Handlebars.js  ==== //
+// ========================================================== //
+
 attendees.addEventListener('click', () => {
     let attendeesArray = [];
     if (tableTemplate.classList.contains('visible')) {

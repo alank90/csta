@@ -33,6 +33,7 @@
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    transition: font-size 0.3s ease-out;
 }
 
 a {
@@ -108,6 +109,7 @@ img[alt='CSTA Logo'] {
 img[src='./signup_img.webp'],
 img[alt='Signup Logo'] {
     max-width: 125px;
+    margin-bottom: -20px;
 }
 
 img[src='./close.webp'] {
@@ -127,11 +129,13 @@ img[src='./close.webp'] {
     background: rgba(95, 172, 223, 0.465);
     border-radius: 50%;
     padding: 10px;
+    transition: all 0.3s ease-in;
 }
 
 .sortable {
     position: relative;
     z-index: 999;
+    margin-bottom: 10px;
 }
 
 .centered-element {
@@ -139,6 +143,7 @@ img[src='./close.webp'] {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    transition: all 0.3s ease-in;
 }
 
 #app {
@@ -208,6 +213,7 @@ CSS Pretty Print * {
     opacity: 0;
     transform: translate3d(0, 500px, 0);
     animation: arrive 500ms ease-in-out 0.7s forwards;
+    margin-bottom: -45px;
 }
 .user__title {
     font-size: 1.4rem;
@@ -245,31 +251,135 @@ CSS Pretty Print * {
     background: #f7f7f7;
 }
 
+.form__input::-webkit-input-placeholder {
+    font-weight: 600;
+    color: #000;
+}
+.form__input::-moz-placeholder {
+    font-weight: 600;
+    color: #000;
+}
+.form__input::-ms-input-placeholder {
+    font-weight: 600;
+    color: #000;
+}
+
+.form__group {
+    border: 1px solid #000;
+}
+.form__group:nth-child(-n + 8) input {
+    background: #88c9f4;
+}
+
+.form__group:nth-child(n + 9) input {
+    background: #d1e0ea;
+}
+
+.form__group:nth-child(n + 13) input {
+    background: #88c9f4;
+}
+
+.form__group:nth-child(n + 17) input {
+    background: #d1e0ea;
+}
+
+.form-header {
+    height: 65px;
+    background: #aba194;
+    text-align: center;
+    padding: 6px 0;
+}
+
+.form-required {
+    font-size: 22px;
+    color: #fff;
+}
+
 .close {
     width: 40px;
     float: right;
-    padding: 5px;
-    background-color: #0b7cb8cb;
+    padding: 8px;
     border-radius: 3px;
 }
 
 .btn {
-    display: block;
-    font-size: 1.4rem;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
     width: 100%;
-    padding: 20px;
-    font-family: 'Roboto';
-    -webkit-appearance: none;
-    appearance: none;
-    outline: 0;
-    border: 0;
-    color: white;
-    background: #aba194;
-    transition: 0.3s;
+    cursor: pointer;
 }
-.btn:hover {
-    background: #a09486;
+
+div[class*='box'] {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.box-1 {
+    background-color: #6eb6d7d8;
+}
+
+/* 
+========================
+  Registration button
+========================
+*/
+.btn-one {
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+}
+.btn-one span {
+    transition: all 0.3s;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.5);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+    transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+.btn-one:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(24, 135, 209, 0.338);
+}
+.btn-one:hover::after {
+    opacity: 0;
+    transform: scale(0.1, 1);
+}
+
+/* registration button hover effect styling */
+
 @keyframes NO {
     from,
     to {
@@ -367,5 +477,23 @@ td {
     }
     button {
         background-color: #f9f9f9;
+    }
+}
+
+/* ========= Media Transforms  ============= */
+
+@media screen and (max-width: 450px) {
+    .event-description {
+        width: 375px;
+        height: 375px;
+        font-size: 0.4rem;
+    }
+
+    .centered-element {
+        font-size: 0.9rem;
+    }
+
+    .nav-container li {
+        font-size: 0.9rem;
     }
 }
