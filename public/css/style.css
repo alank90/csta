@@ -264,22 +264,40 @@ CSS Pretty Print * {
     color: #000;
 }
 
+select {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 1.4rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+    transition: 0.3s;
+}
+
 .form__group {
     border: 1px solid #000;
 }
-.form__group:nth-child(-n + 8) input {
+.form__group:nth-child(-n + 8) input,
+.form__group:nth-child(-n + 8) select {
     background: #88c9f4;
 }
 
-.form__group:nth-child(n + 9) input {
+.form__group:nth-child(n + 9) input,
+.form__group:nth-child(n + 9) select {
     background: #d1e0ea;
 }
 
-.form__group:nth-child(n + 13) input {
+.form__group:nth-child(n + 13) input,
+.form__group:nth-child(n + 13) select {
     background: #88c9f4;
 }
 
-.form__group:nth-child(n + 17) input {
+.form__group:nth-child(n + 17) input,
+.form__group:nth-child(n + 17) select {
     background: #d1e0ea;
 }
 
