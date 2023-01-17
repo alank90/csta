@@ -61,7 +61,7 @@ a:active {
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: 2.4rem;
     line-height: 1.1;
     text-align: center;
     margin-top: 15px;
@@ -92,13 +92,47 @@ h3 {
 .container {
     /* This forces footer to bottom of page */
     min-height: calc(100vh - 75px);
+    width: 75vw;
+    border-radius: 50%;
+    background: rgba(46, 141, 219, 0.537);
+    margin: 0 auto;
 }
 
 img[alt='Laptop Open'] {
     border-radius: 50%;
-    width: 20%;
+    width: 15%;
     margin: 0 auto;
     display: block;
+}
+
+ul:not(.nav-container) {
+    color: #fff;
+    width: 40%;
+    margin: 0 auto;
+    text-align: left;
+    list-style-type: disc;
+}
+
+ul:not(.nav-container):nth-child(3) {
+    margin-bottom: 15px;
+}
+
+ul:not(.nav-container) strong {
+    font-size: 1.7rem;
+}
+
+li {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+p {
+    text-indent: 25px;
+}
+
+li,
+p {
+    line-height: 1.5;
 }
 
 img {
@@ -110,6 +144,7 @@ footer {
     display: flex;
     justify-content: center;
     height: 75px;
+    margin-top: 75px;
 }
 
 footer > a {
@@ -154,5 +189,18 @@ html {
         -o-background-size: cover;
 
         background-size: cover;
+    }
+}
+
+/* ========= Media Transforms for devices less the 450px  ============= */
+
+@media screen and (max-width: 450px) {
+    .container {
+        min-width: auto;
+        border-radius: 0;
+    }
+
+    .nav-container {
+        width: 100vw;
     }
 }

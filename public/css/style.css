@@ -119,8 +119,8 @@ img[src='./close.webp'] {
 
 .event-description {
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     margin: 10px auto;
     text-align: center;
     color: #000;
@@ -270,12 +270,16 @@ select {
     padding: 20px;
     font-family: 'Roboto';
     font-weight: 600;
+    color: #3e5b6f;
     font-size: 1.4rem;
-    -webkit-appearance: none;
-    appearance: none;
     border: 0;
     outline: 0;
     transition: 0.3s;
+}
+
+select option {
+    color: #3e5b6f;
+    font-weight: 600;
 }
 
 .form__group {
@@ -513,5 +517,14 @@ td {
 
     .nav-container li {
         font-size: 0.9rem;
+    }
+
+    .form {
+        width: auto;
+    }
+
+    .sortable {
+        width: auto;
+        max-width: 900px;
     }
 }
