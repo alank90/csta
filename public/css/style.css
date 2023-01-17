@@ -33,7 +33,7 @@
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
-    transition: font-size 0.3s ease-out;
+    transition: font-size, color 0.3s ease-out;
 }
 
 a {
@@ -67,6 +67,7 @@ h1 {
     text-align: center;
     margin-top: 15px;
     font-weight: 550;
+    transition: all 0.2s ease-in;
 }
 
 h2 {
@@ -74,6 +75,7 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     margin: 20px 10px;
+    transition: all 0.2s ease-in;
 }
 
 h3 {
@@ -81,6 +83,7 @@ h3 {
     text-align: center;
     text-transform: uppercase;
     margin: 10px 0;
+    transition: all 0.2s ease-in;
 }
 
 h1,
