@@ -17,7 +17,7 @@
 
 .nav-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     background-color: #03528389;
     justify-content: end;
     margin: 5px 5px;
@@ -59,6 +59,16 @@ a:active {
 .nav-container > li > a:hover,
 .nav-container > li:hover {
     color: rgb(255, 255, 255);
+}
+
+#logout {
+    display: none;
+    font-weight: 600;
+    flex-grow: 3;
+}
+
+#profile img {
+    width: 30px;
 }
 
 h1 {

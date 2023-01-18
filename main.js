@@ -1,5 +1,5 @@
 import SteinStore from 'stein-js-client';
-import sortTable from './modules/sortTables';
+import accessAttendeesTables from './modules/accessAttendeesTables';
 
 // Create Stein Store instance
 const VITE_STEIN_URL = import.meta.env.VITE_STEIN_URL;
@@ -11,8 +11,6 @@ const user = document.querySelector('.user');
 const button = document.querySelector('.btn');
 const form = document.querySelector('form');
 const crowdImg = document.querySelector("img[alt='Crowd Shot']");
-const attendees = document.querySelector('.attendees');
-const tableTemplate = document.getElementById('target');
 
 // ========================================================== //
 // =============== Event listener's ========================= //
@@ -80,52 +78,7 @@ button.addEventListener('click', function () {
 
 // ---------------------------------------------------------------------- //
 
-// ========================================================== //
-// ===== Event listener to retrieve attendees & create   ==== //
-// ===== template forattendee table using Handlebars.js  ==== //
-// ========================================================== //
-
-attendees.addEventListener('click', () => {
-    let attendeesArray = [];
-    if (tableTemplate.classList.contains('visible')) {
-        tableTemplate.classList.remove('visible');
-    }
-
-    try {
-        store
-            .read('signup')
-            .then((data) => {
-                attendeesArray = data;
-
-                // ===== Handlebars template code ============ //
-                let template = document.getElementById('template').innerHTML;
-
-                //Compile the template
-                let compiled_template = Handlebars.compile(template);
-
-                //Render the data into the template
-                let rendered = compiled_template({ attendeesArray });
-
-                //Overwrite the contents of #target with the renderer HTML
-                document.getElementById('target').innerHTML = rendered;
-
-                // toggle the form block so table is able to take its place in
-                // document body.
-                user.classList.toggle('visible');
-            })
-            .then(() => {
-                sortTable();
-                crowdImg.classList.toggle('visible');
-                tableTemplate.scrollIntoView({ behavior: 'smooth' });
-            });
-    } catch (error) {
-        console.log.error(error);
-    }
-
-    //  ============= End Template code =============== //
-});
-
-// ============== Close Dialog Box Event Listener == //
+// ============== Close Dialog Box Event Listener's == //
 form.addEventListener('click', (e) => {
     const el = e.target;
     if (el.classList.contains('close')) {
@@ -133,19 +86,14 @@ form.addEventListener('click', (e) => {
     }
 });
 
-tableTemplate.addEventListener('click', (e) => {
-    const el = e.target;
-    if (el.classList.contains('close')) {
-        tableTemplate.classList.toggle('visible');
-    }
-});
+// -------------------------------------------------------------------------- //
 
-// ------------------------------------------------------------------------ //
 // ==================================================================== //
 // ============== Auth0 Client JS ===================================== //
 // ==================================================================== //
 const domain = import.meta.env.VITE_AUTH0_DOMAIN;
 const clientID = import.meta.env.VITE_CLIENT_ID;
+
 auth0
     .createAuth0Client({
         domain: domain,
@@ -159,8 +107,14 @@ auth0
         const loginButton = document.getElementById('login');
 
         loginButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            auth0Client.loginWithRedirect();
+            if (isAuthenticated) {
+                console.log('Retrieving table');
+                accessAttendeesTables();
+            } else {
+                console.log('not auth');
+                e.preventDefault();
+                auth0Client.loginWithRedirect();
+            }
         });
 
         if (
@@ -185,14 +139,16 @@ auth0
 
         // Assumes an element with id "profile" in the DOM
         const profileElement = document.getElementById('profile');
+        const logoutElement = document.getElementById('logout');
 
         if (isAuthenticated) {
             profileElement.style.display = 'block';
             profileElement.innerHTML = `
-              <p>${userProfile.name}</p>
-              <img src="${userProfile.picture}" />
-            `;
+              <p>${userProfile.name}</p>`;
+            logoutElement.style.display = 'block';
         } else {
             profileElement.style.display = 'none';
         }
+
+        console.log(isAuthenticated);
     });
