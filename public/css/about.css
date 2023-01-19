@@ -126,6 +126,10 @@ li {
     margin-bottom: 6px;
 }
 
+li:last-child {
+    font-weight: 600;
+}
+
 p {
     text-indent: 25px;
 }

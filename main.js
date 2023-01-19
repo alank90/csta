@@ -46,10 +46,14 @@ button.addEventListener('click', function () {
     for (let i = 1; i < 5; i++) {
         if (formData['student_name' + i]) {
             teamMember['team_name'] = formData['team_name'];
+            teamMember['programming_language'] =
+                formData['programming_language'];
             teamMember['school'] = formData['school'];
             teamMember['teacher_advisor'] = formData['teacher_advisor'];
+            teamMember['faculty_email'] = formData['faculty_email'];
+            teamMember['faculty_shirt_size'] = formData['faculty_shirt_size'];
             teamMember['student_name'] = formData['student_name' + i];
-            teamMember['email'] = formData['email' + i];
+            teamMember['student_email'] = formData['student_email' + i];
             teamMember['shirt_size'] = formData['shirt_size' + i];
             teamMember['grade'] = formData['grade' + i];
 
@@ -110,6 +114,7 @@ auth0
             if (isAuthenticated) {
                 console.log('Retrieving table');
                 accessAttendeesTables();
+                logoutButton.style.display = 'inherit';
             } else {
                 console.log('not auth');
                 e.preventDefault();
@@ -126,12 +131,16 @@ auth0
             window.history.replaceState({}, document.title, '/');
         }
 
+        // logout() not implemented in this application
+        // because we only restrict access to specific resource
+        // not a full login experience.
         // Assumes a button with id "logout" in the DOM
         const logoutButton = document.getElementById('logout');
 
         logoutButton.addEventListener('click', (e) => {
             e.preventDefault();
             auth0Client.logout();
+            logoutButton.style.display = 'none';
         });
 
         const isAuthenticated = await auth0Client.isAuthenticated();
@@ -139,13 +148,11 @@ auth0
 
         // Assumes an element with id "profile" in the DOM
         const profileElement = document.getElementById('profile');
-        const logoutElement = document.getElementById('logout');
 
         if (isAuthenticated) {
             profileElement.style.display = 'block';
             profileElement.innerHTML = `
-              <p>${userProfile.name}</p>`;
-            logoutElement.style.display = 'block';
+              <p class="user-name">${userProfile.name}</p>`;
         } else {
             profileElement.style.display = 'none';
         }

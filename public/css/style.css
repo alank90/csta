@@ -61,14 +61,16 @@ a:active {
     color: rgb(255, 255, 255);
 }
 
-#logout {
-    display: none;
-    font-weight: 600;
-    flex-grow: 3;
+.user-name {
+    font-size: 0.9rem;
 }
 
 #profile img {
     width: 30px;
+}
+
+#logout {
+    flex-grow: 3;
 }
 
 h1 {
@@ -298,28 +300,34 @@ select option {
 .form__group {
     border: 1px solid #000;
 }
-.form__group:nth-child(-n + 8) input,
-.form__group:nth-child(-n + 8) select {
+.form__group:nth-child(-n + 10) input,
+.form__group:nth-child(-n + 10) select {
     background: #88c9f4;
 }
 
-.form__group:nth-child(n + 9) input,
-.form__group:nth-child(n + 9) select {
+.form__group:nth-child(n + 11) input,
+.form__group:nth-child(n + 11) select {
     background: #d1e0ea;
 }
 
-.form__group:nth-child(n + 13) input,
-.form__group:nth-child(n + 13) select {
+.form__group:nth-child(n + 15) input,
+.form__group:nth-child(n + 15) select {
     background: #88c9f4;
 }
 
-.form__group:nth-child(n + 17) input,
-.form__group:nth-child(n + 17) select {
+.form__group:nth-child(n + 19) input,
+.form__group:nth-child(n + 19) select {
     background: #d1e0ea;
+}
+
+.input-teacher {
+    background: #88c9f4;
+    font-size: 1.1rem;
+    padding: 0 0 12px 5px;
 }
 
 .form-header {
-    height: 65px;
+    height: 7rem;
     background: #aba194;
     text-align: center;
     padding: 6px 0;

@@ -29,10 +29,10 @@
     <ul class="nav-container">
       <li id="logout">logout</li>
       <li id="signup">Signup</li>
-      <li class="attendees" id="login">Attendees
+      <li class="attendees" id="login" title="Requires login">Attendees
         <div id="profile"></div>
       </li>
-      <li><a href="/pages/about.html">About
+      <li><a href="/pages/about.html">Contest Info
         </a></li>
     </ul>
   </nav>
@@ -64,13 +64,22 @@
 
     <form class="form">
       <div class="form-header">
-        <span class="form-required">&#8727; - Required Fields. You may fill out multiple members at once.</span>
+        <span class="form-required">&#8727; - Required Fields. Please enter all team members at once. Players must be
+          registered by January 29th to be guaranteed a shirt.</span>
         <img class="close" src="./close.png" alt="Close Button">
       </div>
 
       <div class="form__group">
         <input type="text" name="team_name" placeholder="Team Name&#8727;" class="form__input" />
+      </div>
 
+      <div class="form__group">
+        <select name="programming_language">
+          <option value="">-- Programming Language* --
+          </option>
+          <option value="java">Java</option>
+          <option value="python">Python</option>
+        </select>
       </div>
 
       <div class="form__group">
@@ -78,7 +87,24 @@
       </div>
 
       <div class="form__group">
-        <input type="text" name="teacher_advisor" placeholder="Teacher\Advisor&#8727;" class="form__input" />
+        <input type="text" name="teacher_advisor" placeholder="Teacher\Advisor&#8727; " class="form__input" />
+        <p class="input-teacher">(Must be District Employee)</p>
+      </div>
+
+      <div class="form__group">
+        <input type="email" name="faculty_email" placeholder="Teacher/Faculty Email&#8727;" class="form__input" />
+      </div>
+
+      <div class="form__group">
+        <select name="faculty_shirt_size">
+          <option value="">-- Shirt size* --
+          </option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+          <option value="x-large">Xtra-Large</option>
+          <option value="xx-large">XXtra-Large</option>
+        </select>
       </div>
 
       <div class="form__group">
@@ -86,7 +112,7 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="email1" placeholder="Email&#8727;" class="form__input" />
+        <input type="email" name="student_email1" placeholder="Email(optional)" class="form__input" />
       </div>
 
       <div class="form__group">
@@ -110,7 +136,7 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="email2" placeholder="Email" class="form__input" />
+        <input type="email" name="student_email2" placeholder="Email(optional)" class="form__input" />
       </div>
 
       <div class="form__group">
@@ -134,7 +160,7 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="email3" placeholder="Email" class="form__input" />
+        <input type="email" name="student_email3" placeholder="Email(optional)" class="form__input" />
       </div>
 
       <div class="form__group">
@@ -157,7 +183,7 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="email4" placeholder="Email" class="form__input" />
+        <input type="email" name="student_email4" placeholder="Email(optional)" class="form__input" />
       </div>
 
       <div class="form__group">
