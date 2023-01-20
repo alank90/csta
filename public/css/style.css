@@ -71,6 +71,7 @@ a:active {
 
 #logout {
     flex-grow: 3;
+    display: none;
 }
 
 h1 {
@@ -300,30 +301,30 @@ select option {
 .form__group {
     border: 1px solid #000;
 }
-.form__group:nth-child(-n + 10) input,
-.form__group:nth-child(-n + 10) select {
+.form__group:nth-child(-n + 11) input,
+.form__group:nth-child(-n + 11) select {
     background: #88c9f4;
 }
 
-.form__group:nth-child(n + 11) input,
-.form__group:nth-child(n + 11) select {
+.form__group:nth-child(n + 12) input,
+.form__group:nth-child(n + 12) select {
     background: #d1e0ea;
 }
 
-.form__group:nth-child(n + 15) input,
-.form__group:nth-child(n + 15) select {
+.form__group:nth-child(n + 16) input,
+.form__group:nth-child(n + 16) select {
     background: #88c9f4;
 }
 
-.form__group:nth-child(n + 19) input,
-.form__group:nth-child(n + 19) select {
+.form__group:nth-child(n + 20) input,
+.form__group:nth-child(n + 20) select {
     background: #d1e0ea;
 }
 
 .input-teacher {
     background: #88c9f4;
     font-size: 1.1rem;
-    padding: 0 0 12px 5px;
+    padding: 0 0 5px 5px;
 }
 
 .form-header {
