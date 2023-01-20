@@ -226,12 +226,15 @@
       <thead>
       <tr>
         <th>Student Name <span>&#x25b4;&#x25be;</span></th>
-        <th>Email<span>&#x25b4;&#x25be;</span></th>
+        <th>Student Email<span>&#x25b4;&#x25be;</span></th>
         <th>Shirt Size<span>&#x25b4;&#x25be;</span></th>
         <th>Grade<span>&#x25b4;&#x25be;</span></th>
         <th>Team Name<span>&#x25b4;&#x25be;</span></th>
+        <th>Programming Lang<span>&#x25b4;&#x25be;</span></th>
         <th>School<span>&#x25b4;&#x25be;</span></th>
         <th>Teacher\Advisor<span>&#x25b4;&#x25be;</span></th>
+        <th>Tchr\Adv Email<span>&#x25b4;&#x25be;</span></th>
+        <th>Tchr\Adv Shirt Size<span>&#x25b4;&#x25be;</span></th>
       </tr>
       </thead>
 
@@ -239,12 +242,17 @@
         {{#each attendeesArray}}
       <tr>
        <td>{{student_name}}</td>
-       <td>{{email}}</td>
+       <td>{{student_email}}</td>
        <td>{{shirt_size}}</td>
        <td>{{grade}}</td>
        <td>{{team_name}}</td>
+       <td>{{programming_language}}</td> 
        <td>{{school}}</td>
-       <td>{{teacher_advisor}}</td>    
+       <td>{{teacher_advisor}}</td> 
+       <td>{{faculty_email}}</td> 
+       <td>{{faculty_shirt_size}}</td> 
+
+
       </tr>
       {{/each}}
      
