@@ -26,7 +26,6 @@ tableTemplate.addEventListener('click', (e) => {
  */
 
 export default function accessAttendeesTables() {
-    console.log('Ok. called accessAttendees...');
     let attendeesArray = [];
     if (tableTemplate.classList.contains('visible')) {
         tableTemplate.classList.remove('visible');

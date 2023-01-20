@@ -112,7 +112,6 @@ auth0
 
         loginButton.addEventListener('click', (e) => {
             if (isAuthenticated) {
-                console.log('Retrieving table');
                 accessAttendeesTables();
                 logoutButton.style.display = 'inherit';
             } else {
@@ -131,9 +130,6 @@ auth0
             window.history.replaceState({}, document.title, '/');
         }
 
-        // logout() not implemented in this application
-        // because we only restrict access to specific resource
-        // not a full login experience.
         // Assumes a button with id "logout" in the DOM
         const logoutButton = document.getElementById('logout');
 
@@ -156,6 +152,4 @@ auth0
         } else {
             profileElement.style.display = 'none';
         }
-
-        console.log(isAuthenticated);
     });
