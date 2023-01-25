@@ -70,11 +70,11 @@
       </div>
 
       <div class="form__group">
-        <input type="text" name="team_name" placeholder="Team Name&#8727;" class="form__input" />
+        <input type="text" name="team_name" placeholder="Team Name&#8727;" class="form__input" required />
       </div>
 
       <div class="form__group">
-        <select name="programming_language">
+        <select name="programming_language" required>
           <option value="">-- Programming Language* --
           </option>
           <option value="java">Java</option>
@@ -84,16 +84,17 @@
       </div>
 
       <div class="form__group">
-        <input type="text" name="school" placeholder="School&#8727;" class="form__input" />
+        <input type="text" name="school" placeholder="School&#8727;" class="form__input" required />
       </div>
 
       <div class="form__group">
-        <input type="text" name="teacher_advisor" placeholder="Teacher\Advisor&#8727; " class="form__input" />
+        <input type="text" name="teacher_advisor" placeholder="Teacher\Advisor&#8727; " class="form__input" required />
         <p class="input-teacher">(Must be District Employee)</p>
       </div>
 
       <div class="form__group">
-        <input type="email" name="faculty_email" placeholder="Teacher/Faculty Email&#8727;" class="form__input" />
+        <input type="email" name="faculty_email" placeholder="Teacher/Faculty Email&#8727;" class="form__input"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" />
       </div>
 
       <div class="form__group">
@@ -109,11 +110,12 @@
       </div>
 
       <div class="form__group">
-        <input type="text" name="student_name1" placeholder="Member 1&#8727;" class="form__input" />
+        <input type="text" name="student_name1" placeholder="Member 1&#8727;" class="form__input" required />
       </div>
 
       <div class="form__group">
-        <input type="email" name="student_email1" placeholder="Email(optional)" class="form__input" />
+        <input type="email" name="student_email1" placeholder="Email(optional)" class="form__input"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
       </div>
 
       <div class="form__group">
@@ -137,7 +139,8 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="student_email2" placeholder="Email(optional)" class="form__input" />
+        <input type="email" name="student_email2" placeholder="Email(optional)" class="form__input"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
       </div>
 
       <div class="form__group">
@@ -161,7 +164,8 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="student_email3" placeholder="Email(optional)" class="form__input" />
+        <input type="email" name="student_email3" placeholder="Email(optional)" class="form__input"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
       </div>
 
       <div class="form__group">
@@ -184,7 +188,8 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="student_email4" placeholder="Email(optional)" class="form__input" />
+        <input type="email" name="student_email4" placeholder="Email(optional)" class="form__input"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+" />
       </div>
 
       <div class="form__group">
@@ -203,8 +208,9 @@
       </div>
 
       <div class="box-1" title="Click to signup for csta contest">
-        <div class="btn btn-one">
-          <span>Register</span>
+        <div>
+          <button class="btn btn-one" type="button">Register</button>
+          <p class="error-message"></p>
         </div>
       </div>
 

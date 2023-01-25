@@ -347,15 +347,16 @@ select option {
 }
 
 .btn {
-    line-height: 50px;
     height: 50px;
     text-align: center;
     width: 100%;
     cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 550;
 }
 
 div[class*='box'] {
-    height: 35%;
+    padding: 15px 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -372,14 +373,16 @@ div[class*='box'] {
 ========================
 */
 .btn-one {
-    color: #fff;
+    color: #000;
     transition: all 0.3s;
     position: relative;
-}
-.btn-one span {
-    transition: all 0.3s;
+    border: 3px solid rgba(7, 111, 222, 0.749);
     font-size: 1.4rem;
     font-weight: 600;
+    height: 100%;
+}
+.btn-one:hover {
+    border: 3px solid rgba(106, 175, 231, 0.748);
 }
 .btn-one::before {
     content: '';
@@ -399,7 +402,7 @@ div[class*='box'] {
     border-bottom-color: rgba(255, 255, 255, 0.5);
     transform: scale(0.1, 1);
 }
-.btn-one:hover span {
+.btn-one:hover button {
     letter-spacing: 2px;
 }
 .btn-one:hover::before {
