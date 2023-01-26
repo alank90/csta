@@ -21,7 +21,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
     integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 </head>
 
 <body>
@@ -74,9 +74,8 @@
       </div>
 
       <div class="form__group">
-        <select name="programming_language" required>
-          <option value="">-- Programming Language* --
-          </option>
+        <select name="programming_language" required title="Please select a language for the contest.">
+          <option value="">-- Programming Language* --</option>
           <option value="java">Java</option>
           <option value="python">Python</option>
           <option value="javascript">Javascript</option>
@@ -93,7 +92,7 @@
       </div>
 
       <div class="form__group">
-        <input type="email" name="faculty_email" placeholder="Teacher/Faculty Email&#8727;" class="form__input"
+        <input type="email" name="faculty_email" placeholder="Teacher/Faculty Email&#8727;" class="form__input" required
           pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" />
       </div>
 
@@ -231,6 +230,7 @@
       <img class="close" src="./close.webp" alt="Close Button">
       <thead>
       <tr>
+        <th>#</th>
         <th>Student Name <span>&#x25b4;&#x25be;</span></th>
         <th>Student Email<span>&#x25b4;&#x25be;</span></th>
         <th>Shirt Size<span>&#x25b4;&#x25be;</span></th>
@@ -247,6 +247,7 @@
       <tbody>
         {{#each attendeesArray}}
       <tr>
+        <td>{{inc @index}}</td>
        <td>{{student_name}}</td>
        <td>{{student_email}}</td>
        <td>{{shirt_size}}</td>
@@ -257,8 +258,6 @@
        <td>{{teacher_advisor}}</td> 
        <td>{{faculty_email}}</td> 
        <td>{{faculty_shirt_size}}</td> 
-
-
       </tr>
       {{/each}}
      

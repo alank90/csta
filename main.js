@@ -12,6 +12,12 @@ const button = document.querySelector('.btn');
 const form = document.querySelector('form');
 const crowdImg = document.querySelector("img[alt='Crowd Shot']");
 
+// ====== Handlebars.js helpers definition to generate ==== //
+// ====== row numbers for table =========================== //
+Handlebars.registerHelper('inc', function (value, options) {
+    return parseInt(value) + 1;
+});
+
 // ========================================================== //
 // =============== Event listener's ========================= //
 // ========================================================== //

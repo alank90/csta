@@ -339,6 +339,32 @@ select option {
     color: #fff;
 }
 
+/* =======  Form validation stylings ========== */
+input {
+    transition: border-color 0.5s ease-out;
+}
+
+input:optional {
+    border: 1px solid #169be4;
+}
+
+input:required:valid {
+    border: 2px solid green;
+    border-bottom-width: 1px;
+}
+
+input:focus:invalid {
+    background: url('https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg')
+        no-repeat 95% 50% #df8b78;
+    background-size: 25px;
+}
+
+input:focus:out-of-range {
+    background: #df8b78;
+}
+
+/* ======= End Form validation stylings ========== */
+
 .close {
     width: 40px;
     float: right;
