@@ -57,11 +57,12 @@ signUp.addEventListener('click', () => {
 // ================================================================== //
 
 button.addEventListener('click', function () {
+    return;
     // ================================================================= //
     // ============== This is sign up code that ======================== //
     // ============== has been closed and comment out now ============== //
     // ================================================================= //
-    /* const isValid = form.reportValidity();
+    const isValid = form.reportValidity();
     // Run form validity check
     form.reportValidity();
 
@@ -124,7 +125,7 @@ button.addEventListener('click', function () {
         document.querySelector(
             '.error-message'
         ).innerHTML = `Form incorrect. Please check.`;
-    } */
+    }
 });
 
 // ===== End Event listener to submit form data =================== //
