@@ -553,6 +553,87 @@ td {
     }
 }
 
+/* =========== Modal Stylings =================== */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-header {
+    padding: 8px 16px;
+    background-color: #f35b3d;
+    color: white;
+    height: 4rem;
+    width: 100%;
+}
+.modal-header h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60vw; /* Could be more or less, depending on screen size */
+    max-width: 700px;
+    height: auto;
+    font-size: 2rem;
+    border-radius: 5px;
+
+}
+
+.modal-content > p {
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p > em {
+    color: red;
+}
+
+a[href="mailto:gleong@scarsdaleschools.org"] {
+    font-size: 1.8rem;
+}
+
+/* The Close Button */
+.close {
+    color: #000;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ========== End Modal Stylings ===================== */
+
 /* ========= Media Transforms  ============= */
 
 @media screen and (max-width: 450px) {

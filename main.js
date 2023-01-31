@@ -24,8 +24,32 @@ Handlebars.registerHelper('inc', function (value, options) {
 
 // Sign-up button listener
 signUp.addEventListener('click', () => {
-    user.classList.toggle('form--appear');
-    crowdImg.classList.toggle('visible');
+    // ================================================================= //
+    // ============== Modal for Sign up closed JS ====================== //
+    // ================================================================= //
+    // Get the modal
+    const modal = document.getElementById('myModal');
+
+    // Get the <span> element that closes the modal
+    const span = document.querySelector('span.close');
+    console.log(span);
+
+    // When the user clicks on the button, open the modal
+    modal.style.display = 'block';
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+    // user.classList.toggle('form--appear');
+    // crowdImg.classList.toggle('visible');
 });
 
 // ================================================================== //
@@ -33,7 +57,11 @@ signUp.addEventListener('click', () => {
 // ================================================================== //
 
 button.addEventListener('click', function () {
-    const isValid = form.reportValidity();
+    // ================================================================= //
+    // ============== This is sign up code that ======================== //
+    // ============== has been closed and comment out now ============== //
+    // ================================================================= //
+    /* const isValid = form.reportValidity();
     // Run form validity check
     form.reportValidity();
 
@@ -96,7 +124,7 @@ button.addEventListener('click', function () {
         document.querySelector(
             '.error-message'
         ).innerHTML = `Form incorrect. Please check.`;
-    }
+    } */
 });
 
 // ===== End Event listener to submit form data =================== //
